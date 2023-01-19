@@ -1,0 +1,11 @@
+[package]
+name = "ood-halo2"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+sha2 = "0.10.6"
+halo2_proofs = { git = "https://github.com/maxgillett/halo2-ce", branch = "halo2_fri" }
+halo2_base = { git = "https://github.com/maxgillett/halo2-base", branch = "halo2_fri" }
+# ministark = { path = "../ms-v2" }
