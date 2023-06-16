@@ -1,13 +1,11 @@
-use std::collections::BTreeSet;
-
 use halo2_proofs::halo2curves::FieldExt;
-
-use crate::constraints::AlgebraicExpression;
+use ministark::constraintv2::Constraint;
+use std::collections::BTreeSet;
 
 pub trait Air {
     type F: FieldExt;
 
-    fn constraints(&self) -> Vec<AlgebraicExpression<Self::F>>;
+    fn constraints(&self) -> Vec<Constraint<Self::F>>;
 
     fn trace_len(&self) -> usize;
 
@@ -38,7 +36,7 @@ pub trait Air {
     fn trace_arguments(&self) -> BTreeSet<(usize, isize)> {
         self.constraints()
             .iter()
-            .map(AlgebraicExpression::trace_arguments)
+            .map(Constraint::trace_arguments)
             .fold(BTreeSet::new(), |a, b| &a | &b)
     }
 }

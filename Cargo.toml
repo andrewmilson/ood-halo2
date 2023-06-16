@@ -8,4 +8,6 @@ edition = "2021"
 sha2 = "0.10.6"
 halo2_proofs = { git = "https://github.com/maxgillett/halo2-ce", branch = "halo2_fri" }
 halo2_base = { git = "https://github.com/maxgillett/halo2-base", branch = "halo2_fri" }
-# ministark = { path = "../ms-v2" }
+ministark = { path = "../ms-v2" }
+elsa = "1.7.0"
+num-traits = "0.2.15"
